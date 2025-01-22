@@ -48,6 +48,7 @@ class HomeController extends GetxController {
     ).subscribe();
   }
 
+
   // * update the home feed
   void updateFeed(PostModel post) async {
     var user = await SupabaseService.client
