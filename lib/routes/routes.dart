@@ -10,6 +10,8 @@ import 'package:threads_clone/views/setting/setting.dart';
 import 'package:threads_clone/views/thread/show_image.dart';
 import 'package:threads_clone/views/thread/show_thread.dart';
 
+/// THIS SI THE CLASS FOR THE ROUTING MANAGEMENT ////
+
 class Routes {
   static final routes = [
     GetPage(name: RouteNames.home, page: () => Home()),
@@ -39,6 +41,7 @@ class Routes {
       name: RouteNames.showImage,
       page: () => ShowImage(),
       transition: Transition.zoom,
+
     ),
     GetPage(
       name: RouteNames.showProfile,

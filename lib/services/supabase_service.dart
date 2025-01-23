@@ -15,7 +15,7 @@ class SupabaseService extends GetxService {
     super.onInit();
   }
 
-  // * Create Signle Instance
+  // * Create Single Instance of SUPER BASE
   static final SupabaseClient client = Supabase.instance.client;
 
   // * first load the status

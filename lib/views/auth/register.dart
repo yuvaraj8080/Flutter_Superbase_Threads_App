@@ -18,19 +18,17 @@ class _RegisterState extends State<Register> {
   final GlobalKey<FormState> _form = GlobalKey<FormState>();
   final TextEditingController emailController = TextEditingController(text: "");
   final TextEditingController nameController = TextEditingController(text: "");
-  final TextEditingController passwordController =
-      TextEditingController(text: "");
-  final TextEditingController cpasswordController =
-      TextEditingController(text: "");
+  final TextEditingController passwordController = TextEditingController(text: "");
+  final TextEditingController cpasswordController = TextEditingController(text: "");
   final AuthController controller = Get.put(AuthController());
 
   // * Signup method
   void signUp() {
     if (_form.currentState!.validate()) {
       controller.register(
-        nameController.text,
-        emailController.text,
-        passwordController.text,
+        nameController.text.trim(),
+        emailController.text.trim(),
+        passwordController.text.trim(),
       );
     }
   }

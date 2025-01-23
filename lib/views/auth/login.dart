@@ -15,9 +15,10 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+
   final TextEditingController emailController = TextEditingController(text: "");
-  final TextEditingController passwordController =
-      TextEditingController(text: "");
+  final TextEditingController passwordController = TextEditingController(text: "");
+
   final AuthController controller = Get.put(AuthController());
   final GlobalKey<FormState> _form = GlobalKey<FormState>();
 

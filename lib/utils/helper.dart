@@ -8,7 +8,7 @@ import 'package:jiffy/jiffy.dart';
 import 'package:threads_clone/utils/env.dart';
 import 'package:threads_clone/widgets/confirm_box.dart';
 import 'package:uuid/uuid.dart';
-
+//// SNACK BAR ///
 void showSnackBar(String title, String message) {
   Get.snackbar(
     title,

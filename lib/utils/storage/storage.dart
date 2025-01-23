@@ -6,4 +6,5 @@ class Storage {
 
   // * Read user session
   static dynamic userSession = session.read(StorageKey.session);
+
 }

@@ -28,8 +28,7 @@ class MyApp extends StatelessWidget {
       theme: theme,
       getPages: Routes.routes,
       defaultTransition: Transition.noTransition,
-      initialRoute:
-          Storage.userSession != null ? RouteNames.home : RouteNames.login,
+      initialRoute: Storage.userSession != null ? RouteNames.home : RouteNames.login,
     );
   }
 }
