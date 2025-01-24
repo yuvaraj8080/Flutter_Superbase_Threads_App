@@ -34,8 +34,7 @@ class PostModel {
     createdAt = json['created_at'];
     user = json['user'] != null ? UserModel.fromJson(json['user']) : null;
     if (json['likes'] != null) {
-      likes = <LikeModel>[];
-      json['likes'].forEach((v) {
+      likes = <LikeModel>[];json['likes'].forEach((v) {
         likes!.add(LikeModel.fromJson(v));
       });
     }

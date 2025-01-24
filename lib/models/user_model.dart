@@ -10,8 +10,7 @@ class UserModel {
     email = json['email'];
     id = json['id'];
     createdAt = json['created_at'];
-    metadata =
-        json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null;
+    metadata = json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null;
   }
 
   Map<String, dynamic> toJson() {
@@ -19,8 +18,7 @@ class UserModel {
     data['email'] = email;
     data['id'] = id;
     data['created_at'] = createdAt;
-    if (metadata != null) {
-      data['metadata'] = metadata!.toJson();
+    if (metadata != null) {data['metadata'] = metadata!.toJson();
     }
     return data;
   }

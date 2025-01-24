@@ -8,10 +8,9 @@ class NotificationController extends GetxController {
 
   Future<void> fetchNotifications(String userId) async {
     loading.value = true;
-    final List<dynamic> data =
-        await SupabaseService.client.from("notifications").select('''
-  id, post_id, notification,created_at , user_id ,user:user_id (email , metadata)
-''').eq("to_user_id", userId).order("id", ascending: false);
+    final List<dynamic> data = await SupabaseService.client.from("notifications").select('''
+    id, post_id, notification,created_at , user_id ,user:user_id (email , metadata)
+    ''').eq("to_user_id", userId).order("id", ascending: false);
 
     loading.value = false;
     if (data.isNotEmpty) {

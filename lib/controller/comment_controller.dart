@@ -12,10 +12,9 @@ class CommentController extends GetxController {
     try {
       loading.value = true;
       // * Increase the post comment count
-      await SupabaseService.client
-          .rpc("comment_increment", params: {"count": 1, "row_id": postId});
+      await SupabaseService.client.rpc("comment_increment", params: {"count": 1, "row_id": postId});
 
-      // * Add Comment notification
+      // * Add Comment notificationh
       await SupabaseService.client.from("notifications").insert({
         "user_id": userId,
         "notification": "commented on your post.",
@@ -23,8 +22,7 @@ class CommentController extends GetxController {
         "post_id": postId,
       });
 
-      await SupabaseService.client
-          .from("comments")
+      await SupabaseService.client.from("comments")
           .insert({"post_id": postId, "user_id": userId, "reply": reply.value});
       loading.value = false;
       Get.back();
