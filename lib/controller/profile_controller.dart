@@ -10,7 +10,7 @@ import 'package:threads_clone/utils/env.dart';
 import 'package:threads_clone/utils/helper.dart';
 
 class ProfileController extends GetxController {
-  Rx<File?> image = Rx<File?>(null);
+  Rx<File?>   image = Rx<File?>(null);
   var loading = false.obs;
   RxList<PostModel> posts = RxList<PostModel>();
   var postLoading = false.obs;

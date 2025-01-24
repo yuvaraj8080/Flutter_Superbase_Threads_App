@@ -29,6 +29,7 @@ class ThreadController extends GetxController {
     }
   }
 
+
   // * Add post
   Future<void> store(String userId) async {
     try {
@@ -37,6 +38,7 @@ class ThreadController extends GetxController {
       final dir = "$userId/${uuid.v6()}";
       var imgPath = "";
 
+      //// IF IMAGE IS AVAILABLE THEN STORE IN THE BUCKET ////
       if (image.value != null && image.value!.existsSync()) {
         imgPath = await SupabaseService.client.storage
             .from(Env.s3Bucket)

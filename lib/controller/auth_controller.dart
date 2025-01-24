@@ -34,8 +34,7 @@ class AuthController extends GetxController {
   Future<void> login(String email, String password) async {
     loginLoading.value = true;
     try {
-      final AuthResponse response = await SupabaseService.client.auth
-          .signInWithPassword(email: email, password: password);
+      final AuthResponse response = await SupabaseService.client.auth.signInWithPassword(email: email, password: password);
       loginLoading.value = false;
       if (response.user != null) {
         Storage.session.write(StorageKey.session, response.session!.toJson());

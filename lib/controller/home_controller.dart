@@ -30,7 +30,7 @@ class HomeController extends GetxController {
     }
   }
 
-  // * Listen post changes
+  // Listen post changes
   void listenPostChange() {
     SupabaseService.client.channel('public:posts').on(
       RealtimeListenTypes.postgresChanges,

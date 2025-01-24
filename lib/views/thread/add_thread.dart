@@ -38,8 +38,7 @@ class AddThread extends StatelessWidget {
                         children: [
                           Obx(
                             () => Text(
-                              supabaseService
-                                  .currentUser.value!.userMetadata?["name"],
+                              supabaseService.currentUser.value!.userMetadata?["name"],
                               style:
                                   const TextStyle(fontWeight: FontWeight.bold),
                             ),
