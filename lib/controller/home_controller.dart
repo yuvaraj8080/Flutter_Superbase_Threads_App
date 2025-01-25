@@ -23,7 +23,6 @@ class HomeController extends GetxController {
     user:user_id (email , metadata) , likes:likes (user_id ,post_id)
     ''').order("id", ascending: false);
     loading.value = false;
-
     if (data.isNotEmpty) {
       posts.value = [for (var item in data) PostModel.fromJson(item)];
     }
