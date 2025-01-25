@@ -22,6 +22,7 @@ class _LoginState extends State<Login> {
   final AuthController controller = Get.put(AuthController());
   final GlobalKey<FormState> _form = GlobalKey<FormState>();
 
+
   void login() {
     if (_form.currentState!.validate()) {
       if (!controller.loginLoading.value) {

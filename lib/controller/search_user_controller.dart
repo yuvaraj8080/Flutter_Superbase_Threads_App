@@ -16,9 +16,7 @@ class SearchUserController extends GetxController {
     _debounce = Timer(const Duration(milliseconds: 500), () async {
       if (name.isNotEmpty) {
         final List<dynamic> data = await SupabaseService.client
-            .from("users")
-            .select("*")
-            .ilike("metadata->>name", "%$name%");
+            .from("users").select("*").ilike("metadata->>name", "%$name%");
         loading.value = false;
         if (data.isNotEmpty) {
           users.value = [for (var item in data) UserModel.fromJson(item)];

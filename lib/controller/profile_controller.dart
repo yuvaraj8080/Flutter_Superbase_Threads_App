@@ -68,12 +68,10 @@ class ProfileController extends GetxController {
       // * Check if image exits then upload it first
       if (image.value != null && image.value!.existsSync()) {
         final String dir = "$userId/profile.jpg";
-        final String path =
-            await SupabaseService.client.storage.from(Env.s3Bucket).upload(
-                  dir,
-                  image.value!,
-                  fileOptions: const FileOptions(upsert: true),
-                );
+
+        final String path = await SupabaseService.client.storage.from(Env.s3Bucket)
+            .upload(dir,image.value!, fileOptions: const FileOptions(upsert: true));
+
         await SupabaseService.client.auth.updateUser(
           UserAttributes(
             data: {"image": path},

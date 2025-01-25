@@ -4,11 +4,14 @@ import 'package:threads_clone/utils/env.dart';
 import 'package:threads_clone/utils/storage/storage.dart';
 
 class SupabaseService extends GetxService {
+
   Rx<User?> currentUser = Rx<User?>(null);
 
   @override
   void onInit() async {
+
     await Supabase.initialize(url: Env.supabaseUrl, anonKey: Env.supabaseKey);
+
     currentUser.value = client.auth.currentUser;
 
     listenAuthChange();

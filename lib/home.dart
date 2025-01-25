@@ -73,8 +73,7 @@ class Home extends StatelessWidget {
             duration: const Duration(milliseconds: 500),
             switchInCurve: Curves.ease,
             switchOutCurve: Curves.easeInOut,
-            child:
-                navigationService.pages()[navigationService.currentIndex.value],
+            child: navigationService.pages()[navigationService.currentIndex.value],
           )),
     );
   }

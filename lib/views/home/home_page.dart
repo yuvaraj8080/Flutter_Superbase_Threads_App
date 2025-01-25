@@ -4,6 +4,8 @@ import 'package:threads_clone/controller/home_controller.dart';
 import 'package:threads_clone/widgets/loading.dart';
 import 'package:threads_clone/widgets/post_card.dart';
 
+import '../../utils/storage/storage.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 

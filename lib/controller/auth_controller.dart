@@ -7,10 +7,11 @@ import 'package:threads_clone/utils/storage/storage.dart';
 import 'package:threads_clone/utils/storage/storage_key.dart';
 
 class AuthController extends GetxController {
+
   final registerLoading = false.obs;
   final loginLoading = false.obs;
 
-  // * Register Method
+  // * Register Method ///
   Future<void> register(String name, String email, String password) async {
     registerLoading.value = true;
     final AuthResponse response = await SupabaseService.client.auth
@@ -38,6 +39,7 @@ class AuthController extends GetxController {
       loginLoading.value = false;
       if (response.user != null) {
         Storage.session.write(StorageKey.session, response.session!.toJson());
+
         Get.offAllNamed(RouteNames.home);
       }
     } on AuthException catch (error) {

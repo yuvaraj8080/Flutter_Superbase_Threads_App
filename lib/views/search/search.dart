@@ -13,8 +13,8 @@ class Search extends StatefulWidget {
 }
 
 class _SearchState extends State<Search> {
-  final TextEditingController textEditingController =
-      TextEditingController(text: "");
+
+  final TextEditingController textEditingController = TextEditingController(text: "");
   final SearchUserController controller = Get.put(SearchUserController());
 
   void searchUser(String? name) async {
@@ -31,8 +31,7 @@ class _SearchState extends State<Search> {
           SliverAppBar(
             floating: true,
             centerTitle: false,
-            title: const Text(
-              "Search",
+            title: const Text("Search",
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
             ),
             expandedHeight: GetPlatform.isIOS ? 110 : 105,

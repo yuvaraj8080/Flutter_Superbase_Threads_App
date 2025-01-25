@@ -15,13 +15,11 @@ class _EditProfileState extends State<EditProfile> {
   final SupabaseService supabaseService = Get.find<SupabaseService>();
 
   final ProfileController profileController = Get.find<ProfileController>();
-  final TextEditingController textEditingController =
-      TextEditingController(text: "");
+  final TextEditingController textEditingController = TextEditingController(text: "");
 
   @override
   void initState() {
-    textEditingController.text =
-        supabaseService.currentUser.value?.userMetadata?["description"] ?? "";
+    textEditingController.text = supabaseService.currentUser.value?.userMetadata?["description"] ?? "";
     super.initState();
   }
 

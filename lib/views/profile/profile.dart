@@ -78,9 +78,8 @@ class _ProfileState extends State<Profile> {
                                       width: context.width * 0.60,
                                       child: Text(supabaseService
                                               .currentUser
-                                              .value
-                                              ?.userMetadata?["description"] ??
-                                          "threads clone coding with Tushar"),
+                                              .value?.userMetadata?["description"] ??
+                                          "Hello i am Thread"),
                                     ),
                                   ],
                                 ),

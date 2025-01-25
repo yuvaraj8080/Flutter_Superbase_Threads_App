@@ -4,6 +4,7 @@ import 'package:form_validator/form_validator.dart';
 import 'package:get/get.dart';
 import 'package:threads_clone/controller/auth_controller.dart';
 import 'package:threads_clone/routes/route_names.dart';
+import 'package:threads_clone/utils/storage/storage.dart';
 import 'package:threads_clone/utils/styles/button_styles.dart';
 import 'package:threads_clone/widgets/auth_input.dart';
 
@@ -120,6 +121,7 @@ class _RegisterState extends State<Register> {
                     return null;
                   },
                 ),
+
                 const SizedBox(
                   height: 20,
                 ),

@@ -12,8 +12,7 @@ import 'package:threads_clone/utils/helper.dart';
 import 'package:uuid/uuid.dart';
 
 class ThreadController extends GetxController {
-  final TextEditingController contentController =
-      TextEditingController(text: "");
+  final TextEditingController contentController = TextEditingController(text: "");
   var content = "".obs;
   var loading = false.obs;
   Rx<File?> image = Rx<File?>(null);
@@ -30,7 +29,7 @@ class ThreadController extends GetxController {
   }
 
 
-  // * Add post
+  //// ADD THREAD IMAGE IN THE STORAGE IN THE ////
   Future<void> store(String userId) async {
     try {
       loading.value = true;
@@ -74,7 +73,7 @@ class ThreadController extends GetxController {
       final data = await SupabaseService.client.from("posts").select('''
     id ,content , image ,created_at ,comment_count , like_count,user_id,
     user:user_id (email , metadata) , likes:likes (user_id ,post_id)
-''').eq("id", postId).single();
+    ''').eq("id", postId).single();
       showPostLoading.value = false;
       post.value = PostModel.fromJson(data);
 

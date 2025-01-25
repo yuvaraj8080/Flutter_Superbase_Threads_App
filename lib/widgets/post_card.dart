@@ -32,7 +32,7 @@ class PostCard extends StatelessWidget {
             ),
             const SizedBox(width: 10),
             SizedBox(
-              width: context.width * 0.80,
+              width: context.width * 0.75,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

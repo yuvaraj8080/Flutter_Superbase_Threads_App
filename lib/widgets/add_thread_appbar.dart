@@ -40,8 +40,7 @@ class AddThreadAppBar extends StatelessWidget {
           Obx(
             () => TextButton(
               onPressed: () => {
-                Get.find<ThreadController>()
-                    .store(Get.find<SupabaseService>().currentUser.value!.id),
+                Get.find<ThreadController>().store(Get.find<SupabaseService>().currentUser.value!.id),
               },
               child: Get.find<ThreadController>().loading.value
                   ? const SizedBox(

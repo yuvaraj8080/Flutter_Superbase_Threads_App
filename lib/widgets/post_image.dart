@@ -21,8 +21,7 @@ class PostImage extends StatelessWidget {
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(20),
-          child: Image.network(
-            getS3Url(url),
+          child: Image.network(getS3Url(url),
             fit: BoxFit.contain,
             alignment: Alignment.topCenter,
           ),
